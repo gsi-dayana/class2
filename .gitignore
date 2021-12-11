@@ -1,0 +1,6 @@
+/target/
+.settings/
+.classpath
+.idea
+src/test/resources/huge_image.png
+src/test/resources/defaultProperties.properties
