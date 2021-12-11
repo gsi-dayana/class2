@@ -229,13 +229,5 @@ public class AccountPage extends PageObject {
             return null;
         }
     }
-
-    public void checkImageWindowDialog() throws Exception {
-        try {
-
-            //TODO
-        } catch (Exception e) {
-            throw new Exception(e.getMessage());
-        }
-    }
 }
+
