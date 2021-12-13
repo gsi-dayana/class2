@@ -10,7 +10,7 @@ public class AccountStepDefinition {
 		accountStep = new AccountStep();
 	}
 
-	@Given("The user is in  \"Account Settings\" view")
+	@Given("The user is in \"Account Settings\" view")
 	public void the_user_is_in_view() {
 		accountStep.openAccountSetting();
 		accountStep.checkPage();

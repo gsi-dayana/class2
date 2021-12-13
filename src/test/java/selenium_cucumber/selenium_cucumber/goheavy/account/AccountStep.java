@@ -21,12 +21,13 @@ public class AccountStep extends Steps {
 
 	@Override
 	public void checkPage() {
-		accountPage.waitForSpinningElementDisappear();
-		accountPage.waitForElementToBePresent(By.xpath(getHeaderXpath()));
-		String path = accountPage.getPagePath().toLowerCase();
-		Assert.assertTrue(" The path provided is not correct in the url. path: " + path,
-				Setup.getDriverWait().until(ExpectedConditions.urlContains(path)));
+
 		try {
+			accountPage.waitForSpinningElementDisappear();
+			accountPage.waitForElementToBePresent(By.xpath(getHeaderXpath()));
+			String path = accountPage.getPagePath().toLowerCase();
+			Assert.assertTrue(" The path provided is not correct in the url. path: " + path,
+					Setup.getDriverWait().until(ExpectedConditions.urlContains(path)));
 			accountPage.getForm();
 		} catch (Exception e) {
 			fail("The view do not match with Account page.");

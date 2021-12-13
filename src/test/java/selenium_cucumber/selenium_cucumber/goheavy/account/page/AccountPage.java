@@ -14,7 +14,7 @@ import java.util.Set;
 
 public class AccountPage extends PageObject {
     private String closePopupIconXpath;
-    By imageButtonLocator; //TODO -> Insert image button locator
+    By imageButtonLocator = By.xpath("//input[@type='file']");
 
     public AccountPage() {
         super();
@@ -212,9 +212,11 @@ public class AccountPage extends PageObject {
 
     public boolean clicksOnImageButton() {
         try {
-            Setup.getWait().waitUntilElementAppear(getImageButtonLocator());
+            System.out.println(getImageButtonLocator());
+            waitForElementToBePresent(getImageButtonLocator());
             WebElement imageButton = getWebElement(getImageButtonLocator());
-            sendAction(imageButton, null, actions.click);
+            System.out.println(imageButton);
+            Setup.getActions().click(imageButton);
             return true;
         } catch (Exception e) {
             return false;
